@@ -12,7 +12,7 @@ To do
 
 import requests 
 import urllib3
-from errors import *
+from CaaS import errors
 import base64
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
