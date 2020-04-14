@@ -1,24 +1,20 @@
 from distutils.core import setup
 setup(
-  name = 'YOURPACKAGENAME',         # How you named your package folder (MyLib)
-  packages = ['YOURPACKAGENAME'],   # Chose the same as "name"
-  version = '0.1',      # Start with a small number and increase it with every change you make
+  name = 'CaaS',         # How you named your package folder (MyLib)
+  packages = ['CaaS'],   # Chose the same as "name"
+  version = '0.2',      # Start with a small number and increase it with every change you make
   license='MIT',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
-  description = 'TYPE YOUR DESCRIPTION HERE',   # Give a short description about your library
+  description = 'A Python library for Compression as a Service. CaaS can compress images, audio, video, text files ',   # Give a short description about your library
   author = 'Mayur Deshmukh',                   # Type in your name
   author_email = 'mayur.s.deshmukh10@gmail.com',      # Type in your E-Mail
-  url = 'https://github.com/user/reponame',   # Provide either the link to your github or to your website
-  download_url = 'https://github.com/MayurDeshmukh10/CaaS/archive/v_01.tar.gz',    # I explain this later on
+  url = 'https://github.com/MayurDeshmukh10/CaaS',   # Provide either the link to your github or to your website
+  download_url = 'https://github.com/MayurDeshmukh10/CaaS/archive/v_02.tar.gz',    # I explain this later on
   keywords = ['compression', 'image compression', 'video compression', 'audio compression', 'text compression','Compression as a service'],   # Keywords that define your package best
-  install_requires=[            # I get to this in a second
-          'validators',
-          'beautifulsoup4',
-      ],
   classifiers=[
-    'Development Status :: 3 - Alpha',      # Chose either "3 - Alpha", "4 - Beta" or "5 - Production/Stable" as the current state of your package
+    'Development Status :: 4 - Beta',      # Chose either "3 - Alpha", "4 - Beta" or "5 - Production/Stable" as the current state of your package
     'Intended Audience :: Developers',      # Define that your audience are developers
     'Topic :: Software Development :: Build Tools',
-    'License :: OSI Approved :: MIT License',   # Again, pick a license
+    'License :: OSI Approved :: MIT License',  
     'Programming Language :: Python :: 3',      #Specify which pyhton versions that you want to support
     'Programming Language :: Python :: 3.4',
     'Programming Language :: Python :: 3.5',
