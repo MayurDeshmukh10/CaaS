@@ -11,7 +11,7 @@ CaaS can be installed by running ` pip install CaaS `. It requires ` Python 3.6.
 The detailed usage of each interface is given in the section Interfaces. Here is the abstract usage of the CaaS library.
 
 ` from CaaS import interface `
-
+######
 ` response = interface("filename_of_file_to_be_compressed","filename_of_compressed_file","authorization_key") `
 
 here,
@@ -28,8 +28,9 @@ Semantic Perceptual Image Compression algorithm is implemented and deployed on t
 CaaS provides support for compression of JPEG and PNG image files.
 
 #### Usage:
-from CaaS import image_compression
-response = image_compression("image_file_to_be_compressed","filename_of_compressed_image_file","authorization_key")
+` from CaaS import image_compression `
+######
+` response = image_compression("image_file_to_be_compressed","filename_of_compressed_image_file","authorization_key")`
 
 
 ### CaaS::video_compression
@@ -39,8 +40,9 @@ Semantic Perceptual Image Compression algorithm is implemented and deployed on t
 CaaS provides support for compression of MP4 video files.
 
 #### Usage:
-from CaaS import video_compression
-response = video_compression("video_file_to_be_compressed","filename_of_compressed_video_file","authorization_key")
+` from CaaS import video_compression `
+######
+` response = video_compression("video_file_to_be_compressed","filename_of_compressed_video_file","authorization_key") `
 
 ### CaaS::audio_compression
 audio_compression is the interface for Audio Compression.
@@ -49,8 +51,9 @@ Principal Component Analysis algorithm is implemented and deployed on the Openwh
 CaaS provides support for compression of WAV and MP3 audio files.
 
 #### Usage:
-from CaaS import audio_compression
-response = audio_compression("audio_file_to_be_compressed","filename_of_compressed_audio_file","authorization_key")
+` from CaaS import audio_compression `
+######
+` response = audio_compression("audio_file_to_be_compressed","filename_of_compressed_audio_file","authorization_key") `
 
 
 ### CaaS::text_compression
@@ -60,8 +63,9 @@ Adaptive Huffman Compression algorithm is implemented and deployed on the Openwh
 CaaS provides support for compression of TXT Files and Programming Files(e.g.: .cpp, .py, .java, .js, etc).
 
 #### Usage:
-from CaaS import text_compression
-response = text_compression("text_file_to_be_compressed","filename_of_compressed_text_file","authorization_key")
+` from CaaS import text_compression `
+######
+` response = text_compression("text_file_to_be_compressed","filename_of_compressed_text_file","authorization_key") `
 
 ### CaaS::text_decompression
 text_decompression is the interface for Text Decompression.
@@ -73,7 +77,8 @@ CaaS provides support for decompression of TXT Files and Programming Files(e.g.:
 
 
 #### Usage:
-from CaaS import text_decompression
-response = text_decompression("text_file_to_be_decompressed","filename_of_decompressed_text_file","authorization_key")
+` from CaaS import text_decompression `
+######
+` response = text_decompression("text_file_to_be_decompressed","filename_of_decompressed_text_file","authorization_key") `
 
 
