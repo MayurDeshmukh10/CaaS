@@ -73,6 +73,6 @@ here,
 
 #### Usage:
 `from CaaS import text_decompression` <br />
-`response = text_decompression("text_file_to_decompress","filename_of_decompressed_text_file","authorization_key")`
+`response = text_decompression("file_to_decompress","filename_of_decompressed_text_file","authorization_key")`
 
 
