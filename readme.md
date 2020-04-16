@@ -73,7 +73,7 @@ here,
 - Adaptive Huffman Decompression algorithm is implemented and deployed on the Openwhisk Serverless Framework.
 - CaaS provides support for decompression of TXT Files and Programming Files(e.g.: .cpp, .py, .java, .js, etc).
 
-##### NOTE: As the implemented Text Compression and Decompression is lossless, the input to the decompression interface must be the text file compressed with the text_compression interface.
+##### NOTE: As the implemented Text Compression and Decompression is lossless, the input to the `text_decompression` interface must be the text file compressed with the `text_compression` interface.
 
 
 #### Usage:
