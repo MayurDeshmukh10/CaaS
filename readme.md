@@ -4,7 +4,7 @@ CaaS is a Python library which provides Compression as a Service. CaaS offers re
 
 ## Installation
 
-CaaS can be installed by running ` pip install CaaS `. It requires ` Python 3.6.0 and above ` to run. 
+CaaS can be installed by running ` pip3 install CaaS `. It requires ` Python 3.6.0 and above ` to run. 
 
 ## Abstract Usage
 
