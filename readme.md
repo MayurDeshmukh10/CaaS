@@ -11,10 +11,12 @@ CaaS can be installed by running ` pip install CaaS `. It requires ` Python 3.6.
 The detailed usage of each interface is given in the section Interfaces. Here is the abstract usage of the CaaS library.
 
 ` from CaaS import interface `
+
 ` response = interface("filename_of_file_to_be_compressed","filename_of_compressed_file","authorization_key") `
 
 here,
 ` interface `: the interface for compressing image, video, audio and text files. It is discussed in detail for each type of file in Interfaces section.
+
 ` response `: stores HTTP status code returned for your request.  
 
 ## Interfaces:
