@@ -60,7 +60,7 @@ here,
 
 #### Usage:
 `from CaaS import text_compression` <br />
-`response = text_compression("text_file_to_compress","filename_of_compressed_text_file","authorization_key")`
+`response = text_compression("text_file_to_compress","filename_of_compressed_file","authorization_key")`
 
 ### CaaS::text_decompression
 - `text_decompression` is the interface for Text Decompression.
