@@ -16,7 +16,7 @@ The detailed usage of each interface is given in the section Interfaces. Here is
 
 here,
 ` interface `: the interface for compressing image, video, audio and text files. It is discussed in detail for each type of file in Interfaces section.
-
+######
 ` response `: stores HTTP status code returned for your request.  
 
 ## Interfaces:
