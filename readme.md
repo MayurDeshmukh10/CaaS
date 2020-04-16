@@ -30,7 +30,7 @@ CaaS provides support for compression of JPEG and PNG image files.
 #### Usage:
 `from CaaS import image_compression`
 ######
-`response = image_compression("image_file_to_be_compressed","filename_of_compressed_image_file","authorization_key")`
+`response=image_compression("image_file_to_be_compressed","filename_of_compressed_image_file","authorization_key")`
 
 
 ### CaaS::video_compression
