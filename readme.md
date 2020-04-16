@@ -4,18 +4,18 @@ Caas is a Python library which provides Compression as a Service. CaaS offers re
 
 ## Installation:
 
-CaaS can be installed by running 'pip install CaaS'. It requires 'Python 3.6.0 and above' to run. 
+CaaS can be installed by running ` pip install CaaS `. It requires ` Python 3.6.0 and above ` to run. 
 
 ## Abstract Usage:
 
 The detailed usage of each interface is given in the section Interfaces. Here is the abstract usage of the CaaS library.
 
-from CaaS import interface
-response = interface("filename_of_file_to_be_compressed","filename_of_compressed_file","authorization_key")
+` from CaaS import interface `
+` response = interface("filename_of_file_to_be_compressed","filename_of_compressed_file","authorization_key") `
 
 here,
-interface: the interface for compressing image, video, audio and text files. It is discussed in detail for each type of file in Interfaces section.
-response: stores HTTP status code returned for your request.  
+` interface `: the interface for compressing image, video, audio and text files. It is discussed in detail for each type of file in Interfaces section.
+` response `: stores HTTP status code returned for your request.  
 
 ## Interfaces:
 
@@ -67,7 +67,7 @@ It uses Adaptive Huffman Decompression algorithm to decompress the text files.
 Adaptive Huffman Decompression algorithm is implemented and deployed on the Openwhisk Serverless Framework.
 CaaS provides support for decompression of TXT Files and Programming Files(e.g.: .cpp, .py, .java, .js, etc).
 
-#### NOTE: As the implemented Text Compression and Decompression is lossless, the input to the decompression interface must be the text file compressed with the text_compression interface.
+##### NOTE: As the implemented Text Compression and Decompression is lossless, the input to the decompression interface must be the text file compressed with the text_compression interface.
 
 
 #### Usage:
