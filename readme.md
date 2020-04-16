@@ -10,8 +10,7 @@ CaaS can be installed by running ` pip install CaaS `. It requires ` Python 3.6.
 
 The detailed usage of each interface is given under the section Interfaces. Here is the abstract usage of the CaaS library.
 
-`from CaaS import interface`
-######
+`from CaaS import interface` <br />
 `response = interface("filename_of_file_to_compress","filename_of_compressed_file","authorization_key")`
 
 here,
@@ -28,8 +27,7 @@ here,
 - CaaS provides support for compression of JPEG and PNG image files.
 
 #### Usage:
-`from CaaS import image_compression`
-######
+`from CaaS import image_compression` <br />
 `response=image_compression("image_file_to_compress","filename_of_compressed_image_file","authorization_key")`
 
 
@@ -40,8 +38,7 @@ here,
 - CaaS provides support for compression of MP4 video files.
 
 #### Usage:
-`from CaaS import video_compression`
-######
+`from CaaS import video_compression` <br />
 `response = video_compression("video_file_to_compress","filename_of_compressed_video_file","authorization_key")`
 
 ### CaaS::audio_compression
@@ -51,8 +48,7 @@ here,
 - CaaS provides support for compression of WAV and MP3 audio files.
 
 #### Usage:
-`from CaaS import audio_compression`
-######
+`from CaaS import audio_compression` <br />
 `response = audio_compression("audio_file_to_compress","filename_of_compressed_audio_file","authorization_key")`
 
 
@@ -63,7 +59,7 @@ here,
 - CaaS provides support for compression of TXT Files and Programming Files(e.g.: .cpp, .py, .java, .js, etc).
 
 #### Usage:
-`from CaaS import text_compression`
+`from CaaS import text_compression` <br />
 `response = text_compression("text_file_to_compress","filename_of_compressed_text_file","authorization_key")`
 
 ### CaaS::text_decompression
@@ -76,7 +72,7 @@ here,
 
 
 #### Usage:
-`from CaaS import text_decompression`
+`from CaaS import text_decompression` <br />
 `response = text_decompression("text_file_to_decompress","filename_of_decompressed_text_file","authorization_key")`
 
 
