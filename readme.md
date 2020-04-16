@@ -22,10 +22,10 @@ here,
 ## Interfaces
 
 ### CaaS::image_compression
--`image_compression` is the interface for Image Compression.
--It uses Semantic Perceptual Image Compression algorithm to compress the image files.
--Semantic Perceptual Image Compression algorithm is implemented and deployed on the Openwhisk Serverless Framework.
--CaaS provides support for compression of JPEG and PNG image files.
+- `image_compression` is the interface for Image Compression.
+- It uses Semantic Perceptual Image Compression algorithm to compress the image files.
+- Semantic Perceptual Image Compression algorithm is implemented and deployed on the Openwhisk Serverless Framework.
+- CaaS provides support for compression of JPEG and PNG image files.
 
 #### Usage:
 `from CaaS import image_compression`
@@ -34,10 +34,10 @@ here,
 
 
 ### CaaS::video_compression
--`video_compression` is the interface for Video Compression.
--It uses Semantic Perceptual Image Compression algorithm to compress the video files.
--Semantic Perceptual Image Compression algorithm is implemented and deployed on the Openwhisk Serverless Framework.
--CaaS provides support for compression of MP4 video files.
+- `video_compression` is the interface for Video Compression.
+- It uses Semantic Perceptual Image Compression algorithm to compress the video files.
+- Semantic Perceptual Image Compression algorithm is implemented and deployed on the Openwhisk Serverless Framework.
+- CaaS provides support for compression of MP4 video files.
 
 #### Usage:
 `from CaaS import video_compression`
@@ -45,10 +45,10 @@ here,
 `response = video_compression("video_file_to_compress","filename_of_compressed_video_file","authorization_key")`
 
 ### CaaS::audio_compression
--`audio_compression` is the interface for Audio Compression.
--It uses Principal Component Analysis algorithm to compress the audio files.
--Principal Component Analysis algorithm is implemented and deployed on the Openwhisk Serverless Framework.
--CaaS provides support for compression of WAV and MP3 audio files.
+- `audio_compression` is the interface for Audio Compression.
+- It uses Principal Component Analysis algorithm to compress the audio files.
+- Principal Component Analysis algorithm is implemented and deployed on the Openwhisk Serverless Framework.
+- CaaS provides support for compression of WAV and MP3 audio files.
 
 #### Usage:
 `from CaaS import audio_compression`
@@ -57,10 +57,10 @@ here,
 
 
 ### CaaS::text_compression
--`text_compression` is the interface for Text Compression.
--It uses Adaptive Huffman Compression algorithm to compress the text files.
--Adaptive Huffman Compression algorithm is implemented and deployed on the Openwhisk Serverless Framework.
--CaaS provides support for compression of TXT Files and Programming Files(e.g.: .cpp, .py, .java, .js, etc).
+- `text_compression` is the interface for Text Compression.
+- It uses Adaptive Huffman Compression algorithm to compress the text files.
+- Adaptive Huffman Compression algorithm is implemented and deployed on the Openwhisk Serverless Framework.
+- CaaS provides support for compression of TXT Files and Programming Files(e.g.: .cpp, .py, .java, .js, etc).
 
 #### Usage:
 `from CaaS import text_compression`
@@ -68,10 +68,10 @@ here,
 `response = text_compression("text_file_to_compress","filename_of_compressed_text_file","authorization_key")`
 
 ### CaaS::text_decompression
--`text_decompression` is the interface for Text Decompression.
--It uses Adaptive Huffman Decompression algorithm to decompress the text files.
--Adaptive Huffman Decompression algorithm is implemented and deployed on the Openwhisk Serverless Framework.
--CaaS provides support for decompression of TXT Files and Programming Files(e.g.: .cpp, .py, .java, .js, etc).
+- `text_decompression` is the interface for Text Decompression.
+- It uses Adaptive Huffman Decompression algorithm to decompress the text files.
+- Adaptive Huffman Decompression algorithm is implemented and deployed on the Openwhisk Serverless Framework.
+- CaaS provides support for decompression of TXT Files and Programming Files(e.g.: .cpp, .py, .java, .js, etc).
 
 ##### NOTE: As the implemented Text Compression and Decompression is lossless, the input to the decompression interface must be the text file compressed with the text_compression interface.
 
