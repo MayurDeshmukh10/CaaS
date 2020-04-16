@@ -33,8 +33,8 @@ here,
 
 ### CaaS::video_compression
 - `video_compression` is the interface for Video Compression.
-- It uses Semantic Perceptual Image Compression algorithm to compress the video files.
-- Semantic Perceptual Image Compression algorithm is implemented and deployed on the Openwhisk Serverless Framework.
+- It uses Semantic Perceptual Compression algorithm to compress the video files.
+- Semantic Perceptual Compression algorithm is implemented and deployed on the Openwhisk Serverless Framework.
 - CaaS provides support for compression of MP4 video files.
 
 #### Usage:
