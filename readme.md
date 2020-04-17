@@ -1,5 +1,5 @@
-# CaaS
-
+[![PyPI version](https://badge.fury.io/py/CaaS.svg)](https://badge.fury.io/py/CaaS)
+# CaaS    
 CaaS is a Python library which provides Compression as a Service. CaaS offers reasonable and high speed compression by taking advantage of the Serverless Technology. CaaS mainly performs effective compression on Image, Audio and Video files and effective lossless compression/decompression on text files. CaaS library uses custom file compression algorithms which are deployed on Openwhisk Serverless Framework.
 
 ## Installation
