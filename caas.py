@@ -15,6 +15,7 @@ import urllib3
 from CaaS import errors
 import base64
 
+
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 '''Usage
@@ -38,127 +39,151 @@ except InvalidAuthKeyError:
 
 '''	
 
+ 
+
 
 def image_compression(file_to_compress,compressed_file,auth_token):
-	
-	url = "https://service.eu.apiconnect.ibmcloud.com/gws/apigateway/api/6680cf59d332053774ebff7968541738e498ef46b8d4df20fb25851b3dcca438/compression/image_compression_api"
 
-	headers = {'auth-token': auth_token, 'Content-Type': "image/jpeg"}
+	filename = file_to_compress.rpartition('/')[-1]
+	extension = filename.rpartition('.')[-1]
+	if extension == 'jpg' or extension == 'jpeg':
+		content_type = 'image/jpeg'
+	elif extension == 'png':
+		content_type = 'image/png'
+	elif extension == 'tiff':
+		content_type = 'image/tiff'
+	else:
+		content_type = 'image/webp'
 
-	with open(file_to_compress,"rb") as f:
-		temp = f.read()
+	url = "https://data-compression-platform.eu-gb.cf.appdomain.cloud/api/v1/image_compression"
 
-	base64image = base64.b64encode(temp)
-
-	response = requests.post(url, headers=headers, files={file_to_compress: base64image},verify=False)
-
-	if response.status_code == 401:
-		raise InvalidAuthKeyError
-
-	data = response.content
-
-
-	with open(compressed_file,"wb") as out:
-		out.write(data)
-
-	return response
-
-
-def video_compression(file_to_compress,compressed_file,auth_token):
-	
-	url = "https://service.eu.apiconnect.ibmcloud.com/gws/apigateway/api/6680cf59d332053774ebff7968541738e498ef46b8d4df20fb25851b3dcca438/compression/video_compression_api"
-
-	headers = {'auth-token': auth_token,'Content-Type': "video/mp4"}
+	headers = {'auth-token': auth_token, 'Content-Type': content_type}
 
 	with open(file_to_compress,"rb") as f:
 		temp = f.read()
 
-	base64image = base64.b64encode(temp)
-
-
-	response = requests.post(url, headers=headers, files={file_to_compress: base64image},verify=False)
+	response = requests.post(url,data=temp, headers=headers)
 
 	if response.status_code == 401:
 		raise InvalidAuthKeyError
 
-	data = response.content
+	if response.status_code == 406:
+		raise ImageTooSmallError
 
+	data = response.content
 
 	with open(compressed_file,"wb") as out:
 		out.write(data)
 
 	return response
-
-
-
-
-
-def text_compression(file_to_compress,compressed_file,auth_token):
-	url = "https://service.eu.apiconnect.ibmcloud.com/gws/apigateway/api/6680cf59d332053774ebff7968541738e498ef46b8d4df20fb25851b3dcca438/compression/text_compression_encoder_api"
-
-	headers = {'auth-token': auth_token, 'Content-Type': 'text/plain'}
-
-	with open(file_to_compress,'rb') as file:
-		response = requests.post(url, headers=headers, files={file_to_compress: file},verify=False)
-
-	if response.status_code == 401:
-		raise InvalidAuthKeyError
-
-	data = response.content
-
-	
-
-	with open(compressed_file,"wb") as out:
-		out.write(data)
-
-	return response
-
-
-def text_decompression(file_to_compress,compressed_file, auth_token):
-	
-	url = "https://service.eu.apiconnect.ibmcloud.com/gws/apigateway/api/6680cf59d332053774ebff7968541738e498ef46b8d4df20fb25851b3dcca438/compression/text_compression_decoder_api"
-
-	headers = {'auth-token': auth_token, 'Content-Type': "application/x-binary"}
-
-	with open(file_to_compress,"rb") as f:
-		temp = f.read()
-
-	base64image = base64.b64encode(temp)
-
-
-	response = requests.post(url, headers=headers, files={file_to_compress: base64image},verify=False)
-
-	if response.status_code == 401:
-		raise InvalidAuthKeyError
-
-	data = response.content
-
-
-	with open(compressed_file,"wb") as out:
-		out.write(data)
-
-	return response
-
 
 def audio_compression(file_to_compress,compressed_file,auth_token):
-	
-	url = "https://service.eu.apiconnect.ibmcloud.com/gws/apigateway/api/6680cf59d332053774ebff7968541738e498ef46b8d4df20fb25851b3dcca438/compression/audio_compression_api"
 
-	headers = {'auth-token': auth_token,'Content-Type': "audio/mpeg"}
+	filename = file_to_compress.rpartition('/')[-1]
+	extension = filename.rpartition('.')[-1]
+	if extension == 'mp3':
+		content_type = 'audio/mpeg'
+	else:
+		content_type = 'audio/wav'
 
-	with open(file_to_compress,"rb") as file:
-		response = requests.post(url, headers=headers, files={file_to_compress: file},verify=False)
+	url = "https://data-compression-platform.eu-gb.cf.appdomain.cloud/api/v1/audio_compression"
+
+	headers = {'auth-token': auth_token, 'Content-Type': content_type}
+
+	with open(file_to_compress,"rb") as f:
+		temp = f.read()
+
+	response = requests.post(url,data=temp, headers=headers)
+
+
 
 	if response.status_code == 401:
 		raise InvalidAuthKeyError
 
 	data = response.content
 
+	with open(compressed_file,"wb") as out:
+		out.write(data)
+
+	return response
+
+def text_compression(file_to_compress,compressed_file,auth_token):
+
+	filename = file_to_compress.rpartition('/')[-1]
+
+	url = "https://data-compression-platform.eu-gb.cf.appdomain.cloud/api/v1/text_compression_encoder"	
+	
+	headers = {'auth-token': auth_token}
+
+	with open(file_to_compress,"rb") as f:
+		temp = f.read()
+
+	response = requests.post(url,data=temp, headers=headers)
+
+
+	if response.status_code == 401:
+		raise InvalidAuthKeyError
+
+	data = response.content
+
+	with open(compressed_file+'.cmp',"wb") as out:
+		out.write(data)
+
+	return response
+
+def text_decompressionfile_to_compress,compressed_file,auth_token):
+
+	filename = file_to_compress.rpartition('/')[-1]
+
+	url = "https://data-compression-platform.eu-gb.cf.appdomain.cloud/api/v1/text_compression_decoder"	
+	
+	headers = {'auth-token': auth_token}
+
+	with open(file_to_compress,"rb") as f:
+		temp = f.read()
+
+	response = requests.post(url,data=temp, headers=headers)
+
+
+	if response.status_code == 401:
+		raise InvalidAuthKeyError
+
+	data = response.content
 
 	with open(compressed_file,"wb") as out:
 		out.write(data)
 
 	return response
+
+def video_compression(file_to_compress,compressed_file,auth_token):
+
+	filename = file_to_compress.rpartition('/')[-1]
+
+	url = "https://data-compression-platform.eu-gb.cf.appdomain.cloud/api/v1/video_compression"
+
+	headers = {'auth-token': auth_token}
+
+	with open(file_to_compress,"rb") as f:
+		temp = f.read()
+
+	response = requests.post(url,data=temp, headers=headers)
+
+	print("Response : ",response)
+	print("Response Content : ",response.content)
+
+	if response.status_code == 401:
+		raise InvalidAuthKeyError
+
+	data = response.content
+
+	with open(compressed_file,"wb") as out:
+		out.write(data)
+
+	return response
+
+
+
+
 
 
 
@@ -173,7 +198,7 @@ def test_call(auth_token):
 	response = requests.post(url, headers=headers, verify=False)
 
 
-	return response    
+	return response   
     
 
 
