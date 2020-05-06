@@ -131,7 +131,7 @@ def text_compression(file_to_compress,compressed_file,auth_token):
 
 	return response
 
-def text_decompressionfile_to_compress,compressed_file,auth_token):
+def text_decompression(file_to_compress,compressed_file,auth_token):
 
 	filename = file_to_compress.rpartition('/')[-1]
 
@@ -168,9 +168,6 @@ def video_compression(file_to_compress,compressed_file,auth_token):
 
 	response = requests.post(url,data=temp, headers=headers)
 
-	print("Response : ",response)
-	print("Response Content : ",response.content)
-
 	if response.status_code == 401:
 		raise InvalidAuthKeyError
 
@@ -183,22 +180,6 @@ def video_compression(file_to_compress,compressed_file,auth_token):
 
 
 
-
-
-
-
-# For testing purpose
-
-def test_call(auth_token):
-
-	url = "https://fn.enlight.dev/api/v1/web/kkwbecom05/default/test_auth1/"
-	#url = "https://fn.enlight.dev/api/v1/web/kkwbecom05/default/test_api/"
-	headers = {'auth-token': auth_token}
-
-	response = requests.post(url, headers=headers, verify=False)
-
-
-	return response   
     
 
 
